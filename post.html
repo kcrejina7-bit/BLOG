@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post</title>
+<link rel="stylesheet" href="style.css">
+<script src="posts.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+<script>document.write(navbar())</script>
+
+<div id="bar" style="height:4px;background:black;width:0;position:fixed;top:0"></div>
+
+<div class="post" id="post"></div>
+
+<script>
+const id=new URLSearchParams(location.search).get("id");
+const p=POSTS.find(x=>x.id===id);
+
+post.innerHTML = `
+<h1>${p.title}</h1>
+<p>${p.date}</p>
+<hr>
+${md(p.content)}
+`;
+
+window.onscroll=()=>{
+ let h=document.documentElement;
+ bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+"%";
+};
+</script>
+
+<script>document.write(footer())</script>
+</body>
+</html>

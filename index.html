@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rejina KC — Personal Blog</title>
+
+<meta name="description" content="Rejina KC — BIM Student, Sports Leader, and Tech Learner sharing knowledge and experiences.">
+
+<link rel="stylesheet" href="style.css">
+<script src="posts.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+
+<script>document.write(navbar())</script>
+
+<section class="hero">
+<div>
+<h1>Rejina KC</h1>
+<p>BIM Student • Sports Club Leader • Tech Learner • Creative Designer</p>
+
+<p>
+I share practical insights on technology, student life, productivity,
+and learning in Information Management.
+</p>
+
+<a class="btn" href="blog.html">Read Blog</a>
+<a class="btn" href="about.html">About Me</a>
+</div>
+
+<img src="img/me.jpg" alt="My Image">
+
+
+</section>
+
+<div class="grid" id="featured"></div>
+
+<script>
+document.getElementById("featured")
+.innerHTML = renderCards(POSTS.slice(0,2));
+</script>
+
+<script>document.write(footer())</script>
+</body>
+</html>

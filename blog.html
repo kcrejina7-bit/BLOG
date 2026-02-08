@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog</title>
+<link rel="stylesheet" href="style.css">
+<script src="posts.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+<script>document.write(navbar())</script>
+
+<div style="padding:40px 8%">
+<input id="search" placeholder="Search posts..."
+style="padding:12px;width:100%;max-width:400px">
+</div>
+
+<div class="grid" id="posts"></div>
+
+<script>
+const box=document.getElementById("posts");
+box.innerHTML = renderCards(POSTS);
+
+search.oninput=e=>{
+ box.innerHTML =
+ renderCards(filterPosts(e.target.value));
+};
+</script>
+
+<script>document.write(footer())</script>
+</body>
+</html>
